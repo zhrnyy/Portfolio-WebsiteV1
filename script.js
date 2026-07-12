@@ -14,3 +14,18 @@ window.addEventListener("scroll", () => {
     indicator.style.left =
     `calc(${percent * 100}% - ${indicator.offsetWidth / 2}px)`;
 });
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navList = document.querySelector(".nav-list");
+const icon = menuToggle.querySelector("i");
+
+menuToggle.addEventListener("click", () => {
+    navList.classList.toggle("active");
+    if(navList.classList.contains("active")){
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    }else {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+})
